@@ -1,13 +1,38 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+public class Main {
+    public static void main(String[] args) {
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+        // Crear una casa
+        Casa casa = new Casa("Calle Mayor 25");
+
+        // Crear una habitación utilizando la casa
+        Casa.Habitacion habitacion =
+                casa.new Habitacion("Salon");
+
+        // Mostrar información de la habitación
+        habitacion.imprimir();
+
+        System.out.println();
+
+        // Crear una constructora SIN crear una casa
+        Casa.Constructora constructora =
+                new Casa.Constructora("Obras Sur");
+
+        // Mostrar información de la constructora
+        constructora.imprimir();
+
+        /*
+         * EXPLICACIÓN:
+         *
+         *
+         * Habitacion es una clase interna NO estática.
+         * Necesita estar asociada a un objeto Casa.
+         * Puede acceder al atributo privado direccion
+         * porque las clases internas tienen acceso
+         * a los miembros de su clase externa.
+         *
+         * Constructora es una clase anidada ESTÁTICA.
+         * No necesita crear ningún objeto Casa porque
+         * no depende de una instancia de la clase externa.
+         */
+    }
 }
