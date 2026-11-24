@@ -23,7 +23,6 @@ public class Main {
         /*
          * EXPLICACIÓN:
          *
-         *
          * Habitacion es una clase interna NO estática.
          * Necesita estar asociada a un objeto Casa.
          * Puede acceder al atributo privado direccion
